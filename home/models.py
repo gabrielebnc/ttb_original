@@ -32,10 +32,10 @@ class Sneaker(models.Model):
     def get_first_img(self):
         images = self.sneakerimage_set.all()
         list_urls = []
-        for img in images:
-            list_urls.append(img.image.url)
+        for url in images:
+            list_urls.append(url)
         if len(list_urls):
-            return list_urls[0]
+            return list_urls[0].image
         else:
             result = '/static/images/placeholder.png'
         return result
@@ -44,7 +44,7 @@ class Sneaker(models.Model):
 class SneakerImage(models.Model):
     sneaker = models.ForeignKey(Sneaker,
                                 on_delete=models.CASCADE)
-    image = models.ImageField(blank=True, null=True)
+    image = models.URLField(max_length=300, blank=True, null=True)
 
 
 class SneakerSize(models.Model):
@@ -55,6 +55,3 @@ class SneakerSize(models.Model):
 
     def __str__(self):
         return str(self.size_number)
-
-
-
