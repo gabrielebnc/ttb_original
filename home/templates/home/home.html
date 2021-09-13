@@ -1,0 +1,30 @@
+{% extends 'home/base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <title>{% block title %}Home{% endblock %}</title>
+<body>
+{% block content %}
+<br><br>
+<div class="container">
+    <div class="row justify-content-center">
+{% for sneaker in sneakers%}
+        <div class="col-auto mb-5 ">
+          <div class="card" style="width: 18rem; height:24rem," id="sneaker_card">
+            <img class="card-img-top" src="{{ sneaker.get_first_img }}" style="height:14rem">
+            <div class="card-body">
+              <h5 class="card-title">{{sneaker.name}}</h5>
+                <p class="card-text">Available Size:{% for size in sneaker.sneakersize_set.all %} {% if size.sold == True %}<strike>{{size.size_number}}</strike>{% else %}{{size.size_number}}{% endif %}{% endfor %}</p>
+            </div>
+          </div>
+        </div>
+
+{% endfor %}
+
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

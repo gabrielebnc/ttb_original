@@ -1,0 +1,13 @@
+#sneaker_card{
+    background-color: rgba(222, 207, 191, 0.75);
+    
+}
+
+#sneaker_card:hover{
+    border: 1px solid #6a067a !important;
+    box-shadow: 3px 6px rgba(106, 6, 122, 0.77) !important;
+    transition-duration: 0.33s;
+}
+
+
+
