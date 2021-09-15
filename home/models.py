@@ -5,6 +5,9 @@ from django.contrib import admin
 class Sneaker(models.Model):
     name = models.CharField(max_length=120)
 
+    fill_lines = models.BooleanField(default=False)
+
+
     def __str__(self):
         return self.name
 
@@ -27,11 +30,6 @@ class Sneaker(models.Model):
         for piece in sizes:
             pieces += 1
         return pieces
-
-    @property
-    def lunghezzanome(self):
-        return len(self.name)
-
 
     @property
     def get_first_img(self):
