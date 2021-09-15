@@ -14,7 +14,7 @@ class ImageInline(admin.StackedInline):
 
 class SneakerAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Se il nome non occupa più di una riga, selezionare \'Fill lines\'', {'fields': ['name', 'fill_lines']}),
+        ('Se il nome non occupa più di una riga, selezionare Fill lines', {'fields': ['name', 'fill_lines']}),
         ]
     inlines = [SizeInline, ImageInline]
 
