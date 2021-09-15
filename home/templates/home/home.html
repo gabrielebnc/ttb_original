@@ -15,7 +15,7 @@
           <div class="card" style="width: 18rem; height:24rem," id="sneaker_card">
             <img class="card-img-top" src="{{ sneaker.get_first_img }}" style="height:14rem">
             <div class="card-body">
-              <h5 class="card-title">{{sneaker.name}}{% if sneaker.lunghezzanome < 27 %}{{sneaker.lunghezzanome}}<br><br>{% endif %}</h5>
+              <h5 class="card-title">{{sneaker.name}}{% if sneaker.lunghezzanome < 27 %}<br><br>{% endif %}</h5>
                 <p class="card-text">Available Size:{% for size in sneaker.sneakersize_set.all %} {% if size.sold == True %}<strike>{{size.size_number}}</strike>{% else %}{{size.size_number}}{% endif %}{% endfor %}</p>
             </div>
           </div>
