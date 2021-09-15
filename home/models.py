@@ -5,7 +5,11 @@ from django.contrib import admin
 class Sneaker(models.Model):
     name = models.CharField(max_length=120)
 
+<<<<<<< Updated upstream
     fill_lines = models.BooleanField(default=False)
+=======
+    fill_line = models.BooleanField(default=False)
+>>>>>>> Stashed changes
 
 
     def __str__(self):
