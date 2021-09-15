@@ -29,6 +29,11 @@ class Sneaker(models.Model):
         return pieces
 
     @property
+    def lunghezzanome(self):
+        return len(self.name)
+
+
+    @property
     def get_first_img(self):
         images = self.sneakerimage_set.all()
         list_urls = []
