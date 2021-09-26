@@ -12,19 +12,36 @@
     <div class="row justify-content-center">
 {% for sneaker in sneakers%}
         <div class="col-auto mb-5 ">
-          <div class="card" style="width: 18rem; height:24rem," id="sneaker_card">
+          <div class="card" style="width: 18rem; height:24rem," id="sneaker_card" stockx_link = "{{sneaker.stockx}}", g_im_link="{{sneaker.g_im}}">
             <img class="card-img-top" src="{{ sneaker.get_first_img }}" style="height:14rem">
             <div class="card-body">
-              <h5 class="card-title">{{sneaker.name}}</h5>{% if sneaker.fill_line == True %}<br>{% endif %}
+              <h5 class="card-title" id='card-title'>{{sneaker.name}}</h5>{% if sneaker.fill_line == True %}<br>{% endif %}
                 <p class="card-text">Size:{% for size in sneaker.sneakersize_set.all %} {% if size.sold == True %}<strike>{{size.size_number}}</strike>{% else %}{{size.size_number}}{% endif %}{% endfor %}</p>
             </div>
           </div>
         </div>
-
 {% endfor %}
-
     </div>
 </div>
+<!----- STARTING HERE -->
+<div class="modal active" id="sneaker-modal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <a type="button" href="https://www.stockx.com" class="btn btn-outline-success">StockX</a>
+        <a type="button" href="https://www.google.com" class="btn btn-outline-primary">Google Images</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!----- ENDING HERE -->
 {% endblock %}
+
+{% block js %}<script type="module" src="{% static '/js/home.js' %}" ></script>{% endblock js %}
 </body>
 </html>
