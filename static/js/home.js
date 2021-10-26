@@ -20,8 +20,7 @@ function editModal(name, stockx, google_im){
     var selected_modal = document.getElementById('sneaker-modal')
     console.log(name)
     selected_modal.children[0].children[0].children[0].children[0].innerHTML = name //assigning title (name of the sneaker)
-    selected_modal.children[0].children[0].children[1].children[0].href = stockx
-    selected_modal.children[0].children[0].children[1].children[1].href = google_im
+    selected_modal.children[0].children[0].children[1].children[0].href = google_im
     
     
 

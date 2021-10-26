@@ -7,8 +7,6 @@ class Sneaker(models.Model):
     
     fill_line = models.BooleanField(default=False)
 
-    stockx = models.URLField(max_length=300, default='https://stockx.com')
-
     g_im = models.URLField(max_length=300, default='https://images.google.com')
 
 
