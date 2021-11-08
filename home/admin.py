@@ -14,7 +14,7 @@ class ImageInline(admin.StackedInline):
 
 class SneakerAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Se il titolo occupa solo una riga, selezionare Fill line', {'fields': ['name', 'fill_line', 'stockx', 'g_im']}),
+        ('Se il titolo occupa solo una riga, selezionare Fill line', {'fields': ['name', 'fill_line', 'g_im']}),
         ]
     inlines = [SizeInline, ImageInline]
 
